@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<head>
+  <title>e-Sports Sports Shoes</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+    /* Remove the navbar's default rounded borders and increase the bottom margin */ 
+     .navbar {
+     
+      margin-bottom: 50px;
+      border-radius: 0;
+    }
+   
+    /* Remove the jumbotron's default bottom margin */ 
+     .jumbotron {
+      margin-bottom: 0;
+    }
+   
+    /* Add a gray background color and some padding to the footer */
+    footer {
+      background-color: #d6eb34;
+      padding: 25px;
+    }
+  </style>
+</head>
+<body style="background-color: #d6eb34">
+<div class="w-50 p-3" style="background-color: #eb5c34">
+  		<div class="container text-center">
+    		<h1>e-Sport - Sports Shoes </h1>      
+    		<p>Focus on  Quality and Comfort - Simply The Best</p>
+      </div>
+</div>
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#"></a>
+    </div>
+    
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class="active"><a th:href="@{/}">Home</a></li> 
+       </ul>
+    </div>
+  </div>
+</nav>
+
+	<div class="container" style="font-size:2vw">
+		<h1>Payment Received </h1>
+		<br>
+		<h2> Thank you !!</h2>
+			<td th:text="${paymentdetails.firstName}"> </td>
+		 	<td th:text="${paymentdetails.lastName}"> </td>
+		<h2> we appreciate your business </h2>
+	</div>
+		
+</body>
+</html>

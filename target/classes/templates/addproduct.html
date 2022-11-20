@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>e-Sports Sports Shoes</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+    /* Remove the navbar's default rounded borders and increase the bottom margin */ 
+     .navbar {
+     
+      margin-bottom: 50px;
+      border-radius: 0;
+    }
+   
+    /* Remove the jumbotron's default bottom margin */ 
+     .jumbotron {
+      margin-bottom: 0;
+    }
+   
+    /* Add a gray background color and some padding to the footer */
+    footer {
+      background-color: #d6eb34;
+      padding: 25px;
+    }
+  </style>
+</head>
+
+<body style="background-color: #d6eb34">
+<div class="w-50 p-3" style="background-color: #eb5c34">
+  		<div class="container text-center">
+    		<h1>e-Sport - Sports Shoes </h1>      
+    		<p>Focus on  Quality and Comfort - Simply The Best</p>
+      </div>
+</div>
+
+	<div class="container">
+		<h1>Product Management </h1>
+		<hr>
+		<h2>New Product</h2>
+
+		<form action="#" th:action="@{/saveProduct}" th:object="${product}" 
+			method="POST">
+			
+			<input type="text" th:field="*{shortName}"
+				placeholder="Shoe Short Name" class="form-control mb-4 col-4">
+				
+				<input type="text" th:field="*{description}"
+				placeholder="Description" class="form-control mb-4 col-4">
+				
+				<input type="text" th:field="*{manufacturedBy}"
+				placeholder="Manufactured By" class="form-control mb-4 col-4">
+				
+				<input type="text" th:field="*{price}"
+				placeholder="Price" class="form-control mb-4 col-4">
+				
+				<input type="text" th:field="*{size}"
+				placeholder="Size" class="form-control mb-4 col-4">
+				
+				<input type="text" th:field="*{color}"
+				placeholder="Color" class="form-control mb-4 col-4">
+				
+				
+				<input type="date" th:field="*{dateofManufature}"
+				placeholder="Date of Manufacture" class="form-control mb-4 col-4">
+					
+				<input type="date" th:field="*{dateOfExpiry}"
+				placeholder="Date of Expiry" class="form-control mb-4 col-4">
+
+				Category 
+				<select th:field="*{category.id}">
+					<option 	th:each	 = "category: ${category}" 
+								th:text  = "${category.type}" 
+								th:value ="${category.id}"> 
+     				</option>
+    			</select>
+    			<br>
+    			<br>
+  				
+				<button type="submit" class="btn btn-info col-2"> Save </button>
+				<a th:href = "@{/products}" class="btn btn-info col-2">Admin</a>
+		</form>
+
+	</div>
+	
+			<div style="background-color: #eb5c34">
+  		    	<div class="container text-center" style="font-size:2vw">
+  				<tr>
+					<th> </th>
+					<td th:text="${error} +' '"> </td>
+				</tr> 
+    	   		</div>
+	     </div>
+</body>
+</html>

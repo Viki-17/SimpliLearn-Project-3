@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>e-Sports Sports Shoes</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+    /* Remove the navbar's default rounded borders and increase the bottom margin */ 
+     .navbar {
+     
+      margin-bottom: 50px;
+      border-radius: 0;
+    }
+   
+    /* Remove the jumbotron's default bottom margin */ 
+     .jumbotron {
+      margin-bottom: 0;
+    }
+   
+    /* Add a gray background color and some padding to the footer */
+    footer {
+      background-color: #d6eb34;
+      padding: 25px;
+    }
+  </style>
+</head>
+<body>
+
+<body style="background-color: #d6eb34">
+<div class="w-50 p-3" style="background-color: #eb5c34">
+  		<div class="container text-center">
+    		<h1>e-Sport - Sports Shoes </h1>      
+    		<p>Focus on  Quality and Comfort - Simply The Best</p>
+      </div>
+</div>
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#"></a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class="active"><a th:href="@{/}">Home</a></li> 
+
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        	<li><a href="#"><span class="glyphicon glyphicon-user"></span> Your Account</a></li>
+        	<li ><a th:href="@{/showcartitems}"> <span th:text="' '+ ${#lists.size(cartlist)}" class="glyphicon glyphicon-shopping-cart" style="color:#ADFF2F; background:black" ></span> </a>  	
+        	</li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<div class="container my-2">
+	<h1> Product Shopping</h1>
+	<table border="1" class = "table table-striped table-hover table-responsive-md">
+		
+		<thead> 
+			<tr>
+				<th>Short Name</th>
+				<th>Description</th>
+				<th>Manufactured By</th>
+				<th>Size</th>
+				<th>Color</th>
+				<th>Price</th>
+				<th>Actions</th>
+
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="product: ${productlist}">
+				<td th:text="${product.shortName}"> </td>
+				<td th:text="${product.description}"> </td>
+				<td th:text="${product.manufacturedBy}"> </td>
+				<td th:text="${product.size}"> </td>
+				<td th:text="${product.color}"> </td>
+				<td th:text="${product.price}"> </td>
+
+				<td> <a th:href="@{/addtoCart/{id}(id=${product.id})}" class="btn btn-primary"> Add to Cart </a>
+				</td>
+			</tr>
+			
+			
+		</tbody>
+	</table>
+
+</div>
+
+</body>
+</html>
+
+		

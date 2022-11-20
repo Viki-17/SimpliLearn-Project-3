@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+  <title>e-Sports Sports Shoes</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+    /* Remove the navbar's default rounded borders and increase the bottom margin */ 
+     .navbar {
+     
+      margin-bottom: 50px;
+      border-radius: 0;
+    }
+   
+    /* Remove the jumbotron's default bottom margin */ 
+     .jumbotron {
+      margin-bottom: 0;
+    }
+   
+    /* Add a gray background color and some padding to the footer */
+    footer {
+      background-color: #d6eb34;
+      padding: 25px;
+    }
+  </style>
+</head>
+
+<body>
+
+<body style="background-color: #d6eb34">
+<div class="w-50 p-3" style="background-color: #eb5c34">
+  		<div class="container text-center">
+    		<h1>e-Sport - Sports Shoes </h1>      
+    		<p>Focus on  Quality and Comfort - Simply The Best</p>
+      </div>
+</div>
+
+	<div class="container">
+		<h1>Payment Confirmation </h1>
+		<hr>
+		<form action="#" th:action="@{/paymentvalidate}" th:object="${paymentdetails}" 
+			method="POST">
+		  <div style="background-color: #eb5c34">
+  		    	<div class="container text-center" style="font-size:3vw">
+  				<tr>
+					<th>Amount Charged &#36;</th>
+					<td th:text="${totalamount} +' '"> </td>
+				</tr> 
+    	   		</div>
+	      </div>
+			
+				<input type="text" th:field="*{firstName}"
+				placeholder="First Name" class="form-control mb-4 col-4">
+				
+				<input type="text" th:field="*{lastName}"
+				placeholder="Last Name" class="form-control mb-4 col-4">
+				
+				<input type="text" th:field="*{email}"
+				placeholder="eMaild Id" class="form-control mb-4 col-4">
+				
+				<input type="text" th:field="*{phoneNo}"
+				placeholder="Phone No" class="form-control mb-4 col-4">
+				
+				<input type="text" th:field="*{cardNo}"
+				placeholder="Card No" class="form-control mb-4 col-4">
+				
+				<input type="text" th:field="*{expiryDate}"
+				placeholder="Expiry Date(MM/YYYY)" class="form-control mb-4 col-4">
+<!-- 				<br>
+				Amount Charged: <td th:text="${totalamount}"> </td>
+				<br> -->
+				  				
+				<button type="submit" class="btn btn-info col-2"> Confirm </button>
+				<a th:href = "@{/}" class="btn btn-primary btn-sm mb-3"> Home </a>
+			</form>
+		</div>
+		
+		<div style="background-color: #eb5c34">
+  		    	<div class="container text-center" style="font-size:2vw">
+  				<tr>
+					<th> </th>
+					<td th:text="${error} +' '"> </td>
+				</tr> 
+    	   		</div>
+	     </div>
+	
+</body>
+</html>

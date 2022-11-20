@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+  <title>e-Sports Sports Shoes</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+    /* Remove the navbar's default rounded borders and increase the bottom margin */ 
+     .navbar {
+     
+      margin-bottom: 50px;
+      border-radius: 0;
+    }
+   
+    /* Remove the jumbotron's default bottom margin */ 
+     .jumbotron {
+      margin-bottom: 0;
+    }
+   
+    /* Add a gray background color and some padding to the footer */
+    footer {
+      background-color: #f3a4e2;
+      padding: 25px;
+    }
+  </style>
+</head>
+
+<body>
+
+<body style="background-color: #f3a4e2">
+<div class="w-50 p-3" style="background-color: #f50bd6">
+  		<div class="container text-center">
+    		<h1>e-Sport - Sports Shoes </h1>      
+    		<p>Focus on  Quality and Comfort - Simply The Best</p>
+      </div>
+</div>
+
+	<div class="container">
+		<h1>Admin [ Product Management] </h1>
+		<hr>
+
+		<form action="#" th:action="@{/adminValidate}" th:object="${admin}" 
+			method="POST">
+			
+				<input type="text" th:field="*{email}"
+				placeholder="eMaild Id" class="form-control mb-4 col-4">
+				
+				<input type="text" th:field="*{password}"
+				placeholder="Password" class="form-control mb-4 col-4">
+				
+				<br>
+    			<br>
+  				<h2 th:text=" ${error} "></h2>
+  				<br>
+    			<br>
+  				
+				<button type="submit" class="btn btn-info col-2"> LogIn </button>
+				<a th:href = "@{/}" class="btn btn-primary btn-sm mb-3"> Home </a>
+			<!-- 	<a th:href = "@{/products}" class="btn btn-info col-2">Admin</a>
+ -->	</form>
+	</div>
+	
+</body>
+</html>
